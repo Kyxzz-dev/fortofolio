@@ -33,6 +33,10 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Local portfolio sensitive data
+src/data/portfolio.real.json
+src/data/portfolio.current.json
+
 # vercel
 .vercel
 

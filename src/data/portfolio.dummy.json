@@ -1,0 +1,255 @@
+{
+  "meta": {
+    "title": "Alex Morgan — Full-Stack Engineer & Developer",
+    "description": "Personal portfolio of Alex Morgan. Building modern web applications, backend systems, and scalable digital solutions.",
+    "author": "Alex Morgan"
+  },
+  "nav": {
+    "logoText": "A",
+    "logoHighlight": ".",
+    "items": [
+      { "name": "Home", "href": "#home" },
+      { "name": "About", "href": "#about" },
+      { "name": "Skills", "href": "#skills" },
+      { "name": "Education", "href": "#education" },
+      { "name": "Experience", "href": "#experience" },
+      { "name": "Contact", "href": "#contact" }
+    ]
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Alex Morgan",
+    "title": "Full-Stack Engineer & Developer",
+    "bio": "I build modern web applications, robust backend architectures, and intelligent automation systems focused on performance and practical real-world impact.",
+    "primaryCta": {
+      "label": "Contact Me",
+      "href": "#contact"
+    },
+    "secondaryCta": {
+      "label": "View My Work",
+      "href": "#experience"
+    },
+    "socials": [
+      {
+        "platform": "GitHub",
+        "url": "https://github.com",
+        "icon": "FaGithub",
+        "label": "GitHub"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com",
+        "icon": "FaLinkedin",
+        "label": "LinkedIn"
+      }
+    ]
+  },
+  "about": {
+    "badge": "About Me",
+    "titlePrefix": "Turning ideas into",
+    "titleHighlight": "digital solutions.",
+    "paragraphs": [
+      "I am a Computer Science graduate with a passion for software development, full-stack architectures, database design, and cloud-native solutions.",
+      "I enjoy taking products from initial concept and system architecture through coding, testing, CI/CD pipeline automation, and production deployment.",
+      "My goal is to craft user-centered, scalable, and resilient software while constantly exploring emerging engineering paradigms."
+    ],
+    "highlights": [
+      {
+        "icon": "Code2",
+        "title": "Web Development",
+        "description": "Developing performant, responsive web apps utilizing cutting-edge frontend and backend ecosystems."
+      },
+      {
+        "icon": "Database",
+        "title": "Backend & Cloud",
+        "description": "Designing microservices, RESTful APIs, and efficient database architectures."
+      },
+      {
+        "icon": "Cpu",
+        "title": "IoT & Automation",
+        "description": "Connecting hardware controllers with cloud-based dashboards and telemetry systems."
+      },
+      {
+        "icon": "Layers3",
+        "title": "System Architecture",
+        "description": "Designing modular, maintainable software architectures aligned with user needs."
+      }
+    ]
+  },
+  "skills": {
+    "badge": "My Expertise",
+    "title": "Skills.",
+    "description": "Technologies and tools I use to transform ideas into scalable, functional, and modern digital solutions.",
+    "categories": [
+      {
+        "title": "Frontend",
+        "icon": "Code2",
+        "description": "Building modern and responsive interfaces",
+        "skills": [
+          { "name": "Next.js", "icon": "SiNextdotjs", "level": 90 },
+          { "name": "React", "icon": "SiReact", "level": 88 },
+          { "name": "JavaScript", "icon": "SiJavascript", "level": 90 },
+          { "name": "Tailwind CSS", "icon": "SiTailwindcss", "level": 88 }
+        ]
+      },
+      {
+        "title": "Backend",
+        "icon": "Server",
+        "description": "Developing APIs and backend systems",
+        "skills": [
+          { "name": "Node.js", "icon": "SiNodedotjs", "level": 85 },
+          { "name": "Express.js", "icon": "SiExpress", "level": 80 },
+          { "name": "Laravel", "icon": "SiLaravel", "level": 82 },
+          { "name": "PHP", "icon": "SiPhp", "level": 80 },
+          { "name": "Python", "icon": "SiPython", "level": 75 }
+        ]
+      },
+      {
+        "title": "Database",
+        "icon": "Database",
+        "description": "Designing and managing application data",
+        "skills": [
+          { "name": "PostgreSQL", "icon": "SiPostgresql", "level": 40 },
+          { "name": "MySQL", "icon": "SiMysql", "level": 85 },
+          { "name": "Prisma", "icon": "SiPrisma", "level": 30 }
+        ]
+      },
+      {
+        "title": "Tools & DevOps",
+        "icon": "Wrench",
+        "description": "Development workflow and deployment",
+        "skills": [
+          { "name": "Git", "icon": "SiGit", "level": 90 },
+          { "name": "GitHub", "icon": "SiGithub", "level": 90 },
+          { "name": "Docker", "icon": "SiDocker", "level": 75 }
+        ]
+      },
+      {
+        "title": "IoT",
+        "icon": "Cpu",
+        "description": "Connecting hardware with software systems",
+        "skills": [
+          { "name": "Arduino", "icon": "SiArduino", "level": 80 },
+          { "name": "ESP32", "icon": "SiEspressif", "level": 82 }
+        ]
+      }
+    ],
+    "bottomCallout": {
+      "label": "Always learning",
+      "title": "Exploring new technologies.",
+      "status": "Currently building & learning"
+    }
+  },
+  "education": {
+    "badge": "Academic Journey",
+    "title": "Education.",
+    "description": "Academic background and foundations in computer science and software development.",
+    "items": [
+      {
+        "year": "2022 — 2026",
+        "degree": "Bachelor of Computer Science",
+        "school": "Institute of Science & Technology",
+        "location": "Indonesia",
+        "description": "Focused on software engineering, database design, network architecture, and applied machine learning.",
+        "highlights": [
+          "Computer Science",
+          "Software Engineering",
+          "Database Architecture",
+          "Applied Machine Learning"
+        ],
+        "current": false
+      }
+    ],
+    "footerLabel": "From learning to building",
+    "footerText": "Turning academic knowledge into real-world projects."
+  },
+  "experience": {
+    "badge": "Career Journey",
+    "title": "Experience.",
+    "description": "Experiences, projects, and responsibilities that shaped my journey as a developer.",
+    "items": [
+      {
+        "period": "2026",
+        "role": "Full-Stack Software Engineer",
+        "company": "Tech Solutions Lab",
+        "location": "Remote",
+        "type": "Contract",
+        "description": "Architecting modern web platforms, APIs, and microservices for international clients.",
+        "responsibilities": [
+          "Developing responsive web applications with Next.js",
+          "Architecting robust database and RESTful API workflows",
+          "Integrating IoT telemetry and sensor monitoring",
+          "Leading release sprints and code quality assurance"
+        ],
+        "technologies": [
+          { "name": "Next.js", "icon": "SiNextdotjs" },
+          { "name": "Laravel", "icon": "SiLaravel" },
+          { "name": "ESP32", "icon": "SiEspressif" }
+        ]
+      },
+      {
+        "period": "2025 — 2026",
+        "role": "Software Engineering Intern",
+        "company": "Digital Innovation Agency",
+        "location": "Indonesia",
+        "type": "Internship",
+        "description": "Contributed to internal portal development and enterprise workflow automation systems.",
+        "responsibilities": [
+          "Building and optimizing interactive frontend features",
+          "Writing and testing backend endpoints and business logic",
+          "Managing database migrations and query optimization",
+          "Collaborating with cross-functional engineering squads"
+        ],
+        "technologies": [
+          { "name": "Laravel", "icon": "SiLaravel" },
+          { "name": "PHP", "icon": "Code2" }
+        ]
+      },
+      {
+        "period": "2025",
+        "role": "IT Systems Intern",
+        "company": "Regional Information Center",
+        "location": "Indonesia",
+        "type": "Internship",
+        "description": "Assisted infrastructure maintenance, asset tracking, and data processing workflows.",
+        "responsibilities": [
+          "Managing IT asset registry and system health monitoring",
+          "Digitizing records and assisting data analysis",
+          "Implementing automated documentation scripts",
+          "Validating system records and reports"
+        ],
+        "technologies": [
+          { "name": "Data Management", "icon": "Code2" }
+        ]
+      }
+    ],
+    "stats": [
+      { "value": "3+", "label": "Work Experiences" },
+      { "value": "10+", "label": "Projects Built" },
+      { "value": "∞", "label": "Things to Learn" }
+    ]
+  },
+  "contact": {
+    "badge": "Get In Touch",
+    "headingLines": ["Let's build", "something"],
+    "headingHighlight": "great.",
+    "description": "Have a project, idea, or opportunity in mind? Feel free to reach out. I'm always open to discussing new projects and collaborations.",
+    "email": "alex.morgan@example.com",
+    "location": "Indonesia",
+    "copyrightName": "Alex Morgan",
+    "socials": [
+      {
+        "name": "GitHub",
+        "subtitle": "View my code",
+        "url": "https://github.com",
+        "icon": "FaGithub"
+      },
+      {
+        "name": "LinkedIn",
+        "subtitle": "Connect with me",
+        "url": "https://linkedin.com",
+        "icon": "FaLinkedin"
+      }
+    ]
+  }
+}
