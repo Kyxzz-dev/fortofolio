@@ -102,6 +102,7 @@ export const portfolioData: PortfolioData = {
     })),
   },
   education: activeDataRaw.education,
+  certificates: activeDataRaw.certificates,
   experience: {
     ...activeDataRaw.experience,
     items: (activeDataRaw.experience.items || []).map((exp) => ({

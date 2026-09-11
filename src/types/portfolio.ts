@@ -91,20 +91,51 @@ export interface EducationData {
   footerText?: string;
 }
 
+export interface CertificateItem {
+  title: string;
+  issuer: string;
+  issuerLogo?: string;
+  date: string;
+  credentialId?: string;
+  credentialUrl: string;
+  image?: string;
+  skills?: string[];
+  description?: string;
+}
+
+export interface CertificatesData {
+  badge?: string;
+  title?: string;
+  description?: string;
+  items: CertificateItem[];
+}
+
 export interface ExperienceTech {
   name: string;
   icon: IconComponent;
 }
 
+export interface ExperienceProject {
+  title: string;
+  description: string;
+  tags?: string[];
+  url?: string;
+}
+
 export interface ExperienceItem {
+  slug: string;
   period: string;
   role: string;
   company: string;
   location: string;
   type: string;
   description: string;
+  detailedDescription?: string[];
   responsibilities: string[];
+  keyAchievements?: string[];
   technologies: ExperienceTech[];
+  projects?: ExperienceProject[];
+  websiteUrl?: string;
 }
 
 export interface ExperienceStat {
@@ -157,6 +188,7 @@ export interface PortfolioData {
   about: AboutData;
   skills: SkillsData;
   education: EducationData;
+  certificates: CertificatesData;
   experience: ExperienceData;
   contact: ContactData;
 }

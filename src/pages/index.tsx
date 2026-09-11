@@ -4,6 +4,7 @@ import Home from "@/components/Home";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
+import Certificates from "@/components/Certificates";
 import Experience from "@/components/experience";
 import Contact from "@/components/contact";
 import { PortfolioData } from "@/types/portfolio";
@@ -14,7 +15,7 @@ interface PortfolioPageProps {
 }
 
 export default function Page({ data = portfolioData }: PortfolioPageProps) {
-  const { meta, nav, hero, about, skills, education, experience, contact } =
+  const { meta, nav, hero, about, skills, education, certificates, experience, contact } =
     data;
 
   return (
@@ -33,6 +34,7 @@ export default function Page({ data = portfolioData }: PortfolioPageProps) {
         <About data={about} />
         <Skills data={skills} />
         <Education data={education} />
+        <Certificates data={certificates} />
         <Experience data={experience} />
         <Contact data={contact} />
       </main>

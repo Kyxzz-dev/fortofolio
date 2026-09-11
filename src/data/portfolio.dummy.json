@@ -12,6 +12,7 @@
       { "name": "About", "href": "#about" },
       { "name": "Skills", "href": "#skills" },
       { "name": "Education", "href": "#education" },
+      { "name": "Certificates", "href": "#certificates" },
       { "name": "Experience", "href": "#experience" },
       { "name": "Contact", "href": "#contact" }
     ]
@@ -163,63 +164,160 @@
     "footerLabel": "From learning to building",
     "footerText": "Turning academic knowledge into real-world projects."
   },
+  "certificates": {
+    "badge": "Credentials",
+    "title": "Certificates.",
+    "description": "Professional certifications and credentials that validate my expertise.",
+    "items": [
+      {
+        "title": "AWS Certified Cloud Practitioner",
+        "issuer": "Amazon Web Services",
+        "date": "2025",
+        "credentialId": "AWS-CP-12345",
+        "credentialUrl": "https://aws.amazon.com/verification",
+        "skills": ["AWS", "Cloud Computing", "DevOps"],
+        "description": "Foundational understanding of AWS Cloud services and architecture."
+      },
+      {
+        "title": "Meta Front-End Developer",
+        "issuer": "Meta",
+        "date": "2024",
+        "credentialId": "META-FE-67890",
+        "credentialUrl": "https://coursera.org/verify",
+        "skills": ["React", "JavaScript", "HTML/CSS", "Version Control"],
+        "description": "Professional certificate in front-end development with React."
+      },
+      {
+        "title": "Dicoding Indonesia Developer",
+        "issuer": "Dicoding",
+        "date": "2024",
+        "credentialId": "DCD-DEV-11111",
+        "credentialUrl": "https://dicoding.com/certificate",
+        "skills": ["Web Development", "API Integration", "Database"],
+        "description": "Comprehensive web development certification program."
+      },
+      {
+        "title": "Google IT Support Professional",
+        "issuer": "Google",
+        "date": "2023",
+        "credentialId": "GOOGLE-IT-22222",
+        "credentialUrl": "https://coursera.org/verify/google-it",
+        "skills": ["IT Support", "Linux", "Networking", "Security"],
+        "description": "IT infrastructure, networking, and security fundamentals."
+      }
+    ]
+  },
   "experience": {
     "badge": "Career Journey",
     "title": "Experience.",
     "description": "Experiences, projects, and responsibilities that shaped my journey as a developer.",
     "items": [
       {
+        "slug": "freelance-developer",
         "period": "2026",
         "role": "Full-Stack Software Engineer",
         "company": "Tech Solutions Lab",
         "location": "Remote",
         "type": "Contract",
         "description": "Architecting modern web platforms, APIs, and microservices for international clients.",
+        "detailedDescription": [
+          "Architecting and delivering modern web platforms, high-throughput microservices, and client-centric SaaS portals.",
+          "Collaborating across remote international teams to build performant frontend user experiences and resilient cloud infrastructures.",
+          "Designing scalable backend microservices and implementing end-to-end automated deployment pipelines."
+        ],
         "responsibilities": [
           "Developing responsive web applications with Next.js",
           "Architecting robust database and RESTful API workflows",
           "Integrating IoT telemetry and sensor monitoring",
           "Leading release sprints and code quality assurance"
         ],
+        "keyAchievements": [
+          "Engineered high-performance cloud platforms handling diverse client workloads.",
+          "Reduced API query latency by streamlining database indexes and caching layers.",
+          "Established automated CI/CD deployment routines for zero-downtime releases."
+        ],
         "technologies": [
           { "name": "Next.js", "icon": "SiNextdotjs" },
           { "name": "Laravel", "icon": "SiLaravel" },
           { "name": "ESP32", "icon": "SiEspressif" }
+        ],
+        "projects": [
+          {
+            "title": "Cloud SaaS Platform",
+            "description": "Enterprise dashboard and analytical portal with real-time telemetry.",
+            "tags": ["Next.js", "TypeScript", "Tailwind CSS"]
+          }
         ]
       },
       {
+        "slug": "kemenkumham-web-developer",
         "period": "2025 — 2026",
         "role": "Software Engineering Intern",
         "company": "Digital Innovation Agency",
         "location": "Indonesia",
         "type": "Internship",
         "description": "Contributed to internal portal development and enterprise workflow automation systems.",
+        "detailedDescription": [
+          "Contributed to enterprise web application development focusing on workflow automation and record management.",
+          "Partnered with engineering squads to build responsive UI components and integrate resilient backend APIs.",
+          "Conducted code reviews, written integration tests, and optimized database transactions."
+        ],
         "responsibilities": [
           "Building and optimizing interactive frontend features",
           "Writing and testing backend endpoints and business logic",
           "Managing database migrations and query optimization",
           "Collaborating with cross-functional engineering squads"
         ],
+        "keyAchievements": [
+          "Implemented critical administrative modules utilized across multi-department workflows.",
+          "Automated routine data migration tasks, reducing turnaround time by 40%.",
+          "Refactored relational database queries for higher throughput."
+        ],
         "technologies": [
           { "name": "Laravel", "icon": "SiLaravel" },
           { "name": "PHP", "icon": "Code2" }
+        ],
+        "projects": [
+          {
+            "title": "Enterprise Workflow System",
+            "description": "Internal administrative web application designed to accelerate organizational workflows.",
+            "tags": ["Laravel", "PHP", "MySQL"]
+          }
         ]
       },
       {
+        "slug": "dprd-medan-it-intern",
         "period": "2025",
         "role": "IT Systems Intern",
         "company": "Regional Information Center",
         "location": "Indonesia",
         "type": "Internship",
         "description": "Assisted infrastructure maintenance, asset tracking, and data processing workflows.",
+        "detailedDescription": [
+          "Assisted in maintaining corporate IT infrastructure, workstation fleets, and hardware asset verification.",
+          "Automated repetitive clerical inventory audits into structured electronic spreadsheets and dashboards.",
+          "Diagnosed hardware and networking incidents to sustain operational continuity."
+        ],
         "responsibilities": [
           "Managing IT asset registry and system health monitoring",
           "Digitizing records and assisting data analysis",
           "Implementing automated documentation scripts",
           "Validating system records and reports"
         ],
+        "keyAchievements": [
+          "Audited and cataloged comprehensive inventory for organizational IT assets.",
+          "Standardized internal record validation workflows for administrative teams.",
+          "Resolved workstation troubleshooting requests with fast resolution times."
+        ],
         "technologies": [
           { "name": "Data Management", "icon": "Code2" }
+        ],
+        "projects": [
+          {
+            "title": "IT Asset Registry System",
+            "description": "Centralized physical inventory documentation and status monitoring tool.",
+            "tags": ["Data Management", "Hardware Inventory"]
+          }
         ]
       }
     ],

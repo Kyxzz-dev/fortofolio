@@ -37,6 +37,9 @@ yarn-error.log*
 src/data/portfolio.real.json
 src/data/portfolio.current.json
 
+public/certificates/*
+!public/certificates/README.md
+
 # vercel
 .vercel
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Briefcase,
@@ -148,10 +149,15 @@ export default function Experience({
                       </div>
                     </div>
                   </div>
-                {/* Arrow */}
-                <div className="absolute bottom-7 right-7 hidden h-10 w-10 items-center justify-center rounded-full border border-white/10 text-zinc-500 transition-all duration-300 group-hover:border-white/30 group-hover:text-white md:flex">
+                {/* Detail Link Button */}
+                <Link
+                  href={`/experience/${experience.slug}`}
+                  aria-label={`View details for ${experience.role} at ${experience.company}`}
+                  title="View experience details"
+                  className="absolute bottom-7 right-7 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-zinc-400 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-purple-500/50 hover:bg-purple-500/20 hover:text-white group-hover:border-white/30 group-hover:text-white"
+                >
                   <ArrowUpRight size={18} />
-                </div>
+                </Link>
               </Card>
             </motion.article>
           ))}
