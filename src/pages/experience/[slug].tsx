@@ -454,9 +454,16 @@ export default function ExperienceDetailPage({ slug }: ExperienceDetailProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const items = portfolioData.experience?.items || [];
-  const paths = items.map((item) => ({
-    params: { slug: item.slug },
-  }));
+  const paths = items
+    .filter(
+      (item) =>
+        item &&
+        typeof item.slug === "string" &&
+        item.slug.trim().length > 0
+    )
+    .map((item) => ({
+      params: { slug: item.slug.trim() },
+    }));
 
   return {
     paths,
@@ -466,6 +473,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = (params?.slug as string) || "";
+  const items = portfolioData.experience?.items || [];
+  const exists = items.some((item) => item.slug === slug);
+
+  if (!exists) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       slug,
