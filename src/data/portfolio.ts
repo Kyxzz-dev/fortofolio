@@ -72,50 +72,53 @@ function resolveIcon(iconName?: string): IconComponent {
   return Code2; // Fallback jika icon tidak ditemukan
 }
 
+const raw: any = activeDataRaw;
+
 // Hydrate icon komponen ke objek portofolio
 export const portfolioData: PortfolioData = {
-  meta: activeDataRaw.meta,
-  nav: activeDataRaw.nav,
+  meta: raw.meta,
+  nav: raw.nav,
   hero: {
-    ...activeDataRaw.hero,
-    socials: (activeDataRaw.hero.socials || []).map((s) => ({
+    ...raw.hero,
+    socials: (raw.hero?.socials || []).map((s: any) => ({
       ...s,
       icon: resolveIcon(s.icon),
     })),
   },
   about: {
-    ...activeDataRaw.about,
-    highlights: (activeDataRaw.about.highlights || []).map((h) => ({
+    ...raw.about,
+    highlights: (raw.about?.highlights || []).map((h: any) => ({
       ...h,
       icon: resolveIcon(h.icon),
     })),
   },
   skills: {
-    ...activeDataRaw.skills,
-    categories: (activeDataRaw.skills.categories || []).map((cat) => ({
+    ...raw.skills,
+    categories: (raw.skills?.categories || []).map((cat: any) => ({
       ...cat,
       icon: resolveIcon(cat.icon),
-      skills: (cat.skills || []).map((sk) => ({
+      skills: (cat.skills || []).map((sk: any) => ({
         ...sk,
         icon: resolveIcon(sk.icon),
       })),
     })),
   },
-  education: activeDataRaw.education,
-  certificates: activeDataRaw.certificates,
+  education: raw.education || { items: [] },
+  certificates: raw.certificates || { items: [] },
   experience: {
-    ...activeDataRaw.experience,
-    items: (activeDataRaw.experience.items || []).map((exp) => ({
+    ...raw.experience,
+    items: (raw.experience?.items || []).map((exp: any) => ({
       ...exp,
-      technologies: (exp.technologies || []).map((tech) => ({
+      slug: exp.slug || "",
+      technologies: (exp.technologies || []).map((tech: any) => ({
         ...tech,
         icon: resolveIcon(tech.icon),
       })),
     })),
   },
   contact: {
-    ...activeDataRaw.contact,
-    socials: (activeDataRaw.contact.socials || []).map((soc) => ({
+    ...raw.contact,
+    socials: (raw.contact?.socials || []).map((soc: any) => ({
       ...soc,
       icon: resolveIcon(soc.icon),
     })),
