@@ -36,6 +36,7 @@ yarn-error.log*
 # Local portfolio sensitive data
 src/data/portfolio.real.json
 src/data/portfolio.current.json
+base64.txt
 
 # vercel
 .vercel
