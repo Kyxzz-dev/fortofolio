@@ -12,6 +12,8 @@ import {
   CheckCircle2,
   Lock,
   ShieldAlert,
+  FileText,
+  Sparkles,
 } from "lucide-react";
 import SectionBackground from "./ui/SectionBackground";
 import SectionHeader from "./ui/SectionHeader";
@@ -47,7 +49,6 @@ export default function Certificates({
 
     // 2. Deteksi shortcut PrintScreen, DevTools, Ctrl+S, Ctrl+P
     const handleKeyDown = (e: KeyboardEvent) => {
-      // PrintScreen key
       if (e.key === "PrintScreen" || e.keyCode === 44) {
         setIsWindowBlurred(true);
         setShowWarning(true);
@@ -55,7 +56,6 @@ export default function Certificates({
         setTimeout(() => setShowWarning(false), 3000);
       }
 
-      // Ctrl+P (Print), Ctrl+S (Save), Ctrl+U (Source), Ctrl+Shift+I (DevTools), F12
       if (
         (e.ctrlKey && (e.key === "p" || e.key === "s" || e.key === "u")) ||
         (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i" || e.key === "C" || e.key === "c")) ||
@@ -153,7 +153,7 @@ export default function Certificates({
                         <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
                           <span className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-medium text-white shadow-lg backdrop-blur-md">
                             <Eye size={14} />
-                            Lihat Foto Sertifikat
+                            Lihat Detail & Foto
                           </span>
                         </div>
                       </div>
@@ -164,7 +164,7 @@ export default function Certificates({
                       {cert.title}
                     </h3>
 
-                    {/* Description */}
+                    {/* Description preview */}
                     {cert.description && (
                       <p className="mb-4 text-sm leading-relaxed text-zinc-400 line-clamp-2">
                         {cert.description}
@@ -212,7 +212,7 @@ export default function Certificates({
                       className="flex items-center gap-1.5 rounded-lg border border-purple-500/30 bg-purple-500/10 px-3 py-1.5 text-xs font-medium text-purple-300 transition-all duration-200 hover:border-purple-500/50 hover:bg-purple-500/20 hover:text-white"
                     >
                       <Eye size={13} />
-                      Lihat Sertifikat
+                      Lihat Detail
                     </button>
                   </div>
                 </Card>
@@ -222,23 +222,23 @@ export default function Certificates({
         </div>
       </section>
 
-      {/* Certificate Photo Lightbox Modal dengan Perlindungan Privasi */}
+      {/* Certificate Photo Lightbox & Full Details Modal */}
       <AnimatePresence>
         {selectedCert && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex select-none items-center justify-center bg-black/90 p-4 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex select-none items-center justify-center bg-black/90 p-3 sm:p-5 backdrop-blur-md"
             onContextMenu={(e) => e.preventDefault()}
             onClick={() => setSelectedCert(null)}
           >
             <motion.div
-              initial={{ scale: 0.92, opacity: 0 }}
+              initial={{ scale: 0.94, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.92, opacity: 0 }}
+              exit={{ scale: 0.94, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 320 }}
-              className="relative max-h-[92vh] w-full max-w-3xl overflow-hidden rounded-2xl border border-white/15 bg-zinc-950 p-6 shadow-2xl"
+              className="relative max-h-[92vh] w-full max-w-4xl overflow-y-auto rounded-3xl border border-white/15 bg-zinc-950 p-5 sm:p-7 shadow-2xl custom-scrollbar"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Privacy Warning Toast */}
@@ -265,31 +265,40 @@ export default function Certificates({
                 <X size={18} />
               </button>
 
-              {/* Privacy Header Badge */}
-              <div className="mb-3 flex items-center gap-2 text-xs text-zinc-400">
-                <span className="flex items-center gap-1.5 rounded-md border border-purple-500/30 bg-purple-500/10 px-2.5 py-1 text-purple-300">
-                  <Lock size={12} />
-                  Protected Document Preview
-                </span>
-                <span className="hidden sm:inline text-zinc-500 text-[11px]">
-                  Dilarang menggandakan / merekam tanpa izin
-                </span>
+              {/* Header Title & Issuer Info */}
+              <div className="mb-5 pr-10">
+                <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
+                  <span className="flex items-center gap-1.5 rounded-md border border-purple-500/30 bg-purple-500/10 px-2.5 py-1 font-medium text-purple-300">
+                    <Lock size={12} />
+                    Protected Document
+                  </span>
+                  <span className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-1 text-zinc-400">
+                    {selectedCert.issuer}
+                  </span>
+                  <span className="flex items-center gap-1 text-zinc-500">
+                    <Calendar size={12} />
+                    {selectedCert.date}
+                  </span>
+                </div>
+                <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+                  {selectedCert.title}
+                </h2>
               </div>
 
               {/* Certificate Protected Image Area */}
               <div
-                className="relative flex max-h-[58vh] w-full items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-black/70 p-2 select-none"
+                className="relative mb-6 flex max-h-[50vh] w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/80 p-2 select-none"
                 onContextMenu={(e) => e.preventDefault()}
                 onDragStart={(e) => e.preventDefault()}
               >
-                {/* 1. Transparent Click/Drag Shield Overlay */}
+                {/* Transparent Click/Drag Shield Overlay */}
                 <div
                   className="absolute inset-0 z-20 cursor-default select-none pointer-events-auto"
                   onContextMenu={(e) => e.preventDefault()}
                   onDragStart={(e) => e.preventDefault()}
                 />
 
-                {/* 2. Diagonal Repeating Watermark Overlay */}
+                {/* Diagonal Repeating Watermark Overlay */}
                 <div className="pointer-events-none absolute inset-0 z-10 flex select-none flex-wrap items-center justify-around overflow-hidden opacity-[0.08]">
                   {Array.from({ length: 12 }).map((_, i) => (
                     <span
@@ -301,7 +310,7 @@ export default function Certificates({
                   ))}
                 </div>
 
-                {/* 3. Focus-Loss Obfuscation (Blurs when snipping tool / screen recorder steals focus) */}
+                {/* Focus-Loss Obfuscation */}
                 {selectedCert.image ? (
                   <div
                     className={`relative w-full flex justify-center transition-all duration-300 ${
@@ -313,7 +322,7 @@ export default function Certificates({
                       alt={selectedCert.title}
                       draggable={false}
                       onContextMenu={(e) => e.preventDefault()}
-                      className="max-h-[54vh] w-auto max-w-full rounded-lg object-contain shadow-md select-none pointer-events-none user-select-none"
+                      className="max-h-[46vh] w-auto max-w-full rounded-lg object-contain shadow-md select-none pointer-events-none user-select-none"
                       style={{
                         WebkitUserSelect: "none",
                         userSelect: "none",
@@ -344,39 +353,69 @@ export default function Certificates({
                 )}
               </div>
 
-              {/* Modal Details Footer */}
-              <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <h3 className="text-base font-semibold text-white">
-                    {selectedCert.title}
-                  </h3>
-                  <div className="mt-1 flex flex-wrap items-center gap-2.5 text-xs text-zinc-400">
-                    <span className="text-purple-300 font-medium">{selectedCert.issuer}</span>
-                    <span>•</span>
-                    <span className="flex items-center gap-1">
-                      <Calendar size={12} />
-                      {selectedCert.date}
-                    </span>
-                    {selectedCert.credentialId && (
-                      <>
-                        <span>•</span>
-                        <span>ID: <span className="font-mono text-zinc-300">{selectedCert.credentialId}</span></span>
-                      </>
+              {/* Full Details & Description Section */}
+              <div className="space-y-4 rounded-2xl border border-white/10 bg-white/[0.02] p-5 sm:p-6">
+                {/* Description */}
+                {selectedCert.description && (
+                  <div>
+                    <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-purple-400">
+                      <FileText size={14} />
+                      <span>Deskripsi & Ruang Lingkup Kompetensi</span>
+                    </div>
+                    <p className="text-sm sm:text-base leading-relaxed text-zinc-300">
+                      {selectedCert.description}
+                    </p>
+                  </div>
+                )}
+
+                {/* Skills Acquired */}
+                {selectedCert.skills && selectedCert.skills.length > 0 && (
+                  <div className="border-t border-white/10 pt-4">
+                    <div className="mb-2.5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                      <Sparkles size={14} className="text-purple-400" />
+                      <span>Kompetensi / Keterampilan yang Divalidasi</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedCert.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="rounded-lg border border-purple-500/20 bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-200"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Credential ID & External Verify Button */}
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-white/10 pt-4">
+                  <div className="text-xs text-zinc-400">
+                    {selectedCert.credentialId ? (
+                      <span>
+                        Credential ID:{" "}
+                        <span className="font-mono font-medium text-white">{selectedCert.credentialId}</span>
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1.5 text-emerald-400">
+                        <CheckCircle2 size={14} />
+                        Sertifikasi Resmi Terverifikasi
+                      </span>
                     )}
                   </div>
-                </div>
 
-                {selectedCert.credentialUrl && (
-                  <a
-                    href={selectedCert.credentialUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 shrink-0 rounded-xl bg-white/10 px-4 py-2 text-xs font-medium text-white transition-all hover:bg-white/20"
-                  >
-                    <ExternalLink size={13} />
-                    Verifikasi Link
-                  </a>
-                )}
+                  {selectedCert.credentialUrl && (
+                    <a
+                      href={selectedCert.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-2.5 text-xs font-semibold text-white shadow-lg transition-all hover:from-purple-500 hover:to-indigo-500 hover:shadow-purple-500/25"
+                    >
+                      <ExternalLink size={14} />
+                      Verifikasi Kredensial Resmi
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           </motion.div>
